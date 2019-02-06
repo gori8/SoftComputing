@@ -1,0 +1,12 @@
+RA 23/2015 Igor Antolovic
+file	sum
+C:/soft/SoftComputing/data/video-0.avi -22
+C:/soft/SoftComputing/data/video-1.avi -11
+C:/soft/SoftComputing/data/video-2.avi 6
+C:/soft/SoftComputing/data/video-3.avi -55
+C:/soft/SoftComputing/data/video-4.avi -35
+C:/soft/SoftComputing/data/video-5.avi 15
+C:/soft/SoftComputing/data/video-6.avi -69
+C:/soft/SoftComputing/data/video-7.avi 10
+C:/soft/SoftComputing/data/video-8.avi -8
+C:/soft/SoftComputing/data/video-9.avi 20
