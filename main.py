@@ -19,7 +19,7 @@ def number_nn_recogn(img, center):
     global model
     x, y = center
 
-    global counter
+   
 
     croppedImage = img[y-12:y+12,x-12:x+12]
 
@@ -53,7 +53,7 @@ def object_tracking(img, linesBG):
     global model
     global elements
     global frameNumber
-    global counter
+  
     global added
     global subbed
     global times
@@ -135,7 +135,7 @@ def object_tracking(img, linesBG):
                         added += val
                         addedNumbers.append(val)
                         el['passedPlus'] = True
-                        counter += 1
+                        
                         
             if passed:
                 cv2.circle(img, el['center'], 16, c, 2)
@@ -152,7 +152,7 @@ def object_tracking(img, linesBG):
                         added += val
                         addedNumbers.append(val)
                         el['passedPlus'] = True
-                        counter += 1
+                       
                         
 
             
@@ -165,7 +165,6 @@ def object_tracking(img, linesBG):
                     c = (0, 255, 160)
                     if el['passedMinus'] == False: #and not(distance(led['center'],el['center'])<20 and led['number']==el['number']):
                         el['passedMinus'] = True
-                        counter += 1
                         subbed -= val
                         subbedNumbers.append(val)
                     
@@ -184,7 +183,6 @@ def object_tracking(img, linesBG):
                     c = (0, 255, 160)
                     if el['passedMinus'] == False:
                         el['passedMinus'] = True
-                        counter += 1
                         subbed -= val
                         subbedNumbers.append(val)
             
@@ -207,7 +205,6 @@ def object_tracking(img, linesBG):
     cv2.putText(img, text = 'Add: ' + str(added), org = (480, 40), fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale = 0.5, color = (0,0,255))
     cv2.putText(img, text = 'Sub: ' + str(subbed), org = (480, 60), fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale = 0.5, color = (0,0,255))    
     cv2.putText(img, text = 'Sum: ' + str(added + subbed), org = (480, 80), fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale = 0.5, color = (0,0,255))    
-    cv2.putText(img, text = 'Counter: ' + str(counter), org = (480, 100), fontFace = cv2.FONT_HERSHEY_SIMPLEX, fontScale = 0.5, color = (0,0,255))    
 
     
     
@@ -298,7 +295,6 @@ def main(vid,view):
     global retSum
     global elements
     global frameNumber
-    global counter
     
     global added
     global addedNumbers
@@ -313,7 +309,7 @@ def main(vid,view):
     
     added = 0
     subbed = 0
-    counter=0
+
     subbedNumbers = []
     addedNumbers = []
     frameNumber = 0
@@ -356,14 +352,14 @@ def main(vid,view):
     sum = added + subbed
 
     
-    print('\nResult = ' + str(sum) +', Addition = ' + str(added) + ', Subtraction = ' + str(subbed) + ', Counter = ' + str(counter))
+    print('\nResult = ' + str(sum) +', Addition = ' + str(added) + ', Subtraction = ' + str(subbed))
     print('Finished ' + videos[vid])
     print('\n')
     
     
     added = 0
     subbed = 0
-    counter=0
+
     subbedNumbers = []
     addedNumbers = []
     frameNumber = 0
